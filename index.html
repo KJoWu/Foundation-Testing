@@ -59,7 +59,7 @@
 
     <!--ROLLING CONTENT-->
     <div id="owl-slider" class="row owl-carousel owl-theme">
-        <div class="item">
+        <div class="item panel">
             <h1>Delicious Drinks</h1>
             <p class="lead">spoon blue mountain single origin robusta milk filter, crema, rich, ut shop siphon white breve aftertaste seasonal
             </p>
@@ -110,6 +110,35 @@
     <!--END OF MAIN CONTENT-->
 
 
+    <!-- Page Footer -->
+    <div class="row">
+      <hr>
+      <div class="large-4 large-centered columns">      
+        <p>&copy; 2015 Recipes. Kim Inc.</p>
+      </div>    
+    </div><!-- End Page Footer -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <!--MODAL FORM-->
     <div id="myModal" class="reveal-modal small" data-reveal>
         <h4>Awesome. We will update you soon!</h4>
@@ -152,7 +181,7 @@
             singleItem: true,
             afterInit: progressBar,
             afterMove: moved,
-            startDragging: pauseOnDragging
+            startDragging: pauseOnDragging,
         });
 
         //Init progressBar where elem is $("#owl-demo")
@@ -209,13 +238,6 @@
             //start again
             start();
         }
-
-        $elem.on('mouseover', function() {
-            isPause = true;
-        })
-        $elem.on('mouseout', function() {
-            isPause = false;
-        })
 
     });
     jQuery.noConflict();
