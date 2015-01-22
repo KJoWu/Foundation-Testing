@@ -58,7 +58,7 @@
     <!-- END OF TOP BAR MENU -->
 
     <!--ROLLING CONTENT-->
-    <div id="owl-demo" class="row owl-carousel">
+    <div id="owl-slider" class="row owl-carousel owl-theme">
         <div class="item">
             <h1>Delicious Drinks</h1>
             <p class="lead">spoon blue mountain single origin robusta milk filter, crema, rich, ut shop siphon white breve aftertaste seasonal
@@ -96,6 +96,17 @@
             <p>Lorem ipsum Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus nam, eveniet. Molestias quo sapiente deleniti illum enim doloribus, explicabo ratione. dolor sit amet, consectetur adipisicijhkhkjhkjhkjhkjhkjhkjng elit. Consequuntur, saepe.</p>
         </div>
     </div>
+
+    <hr>
+    <div class="row">
+        <div <div class="large-6 columns">
+            <h4>New food update</h4> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi porro, magni labore officiis, doloribus distinctio fugiat, a animi sequi maxime sit architecto sunt. Neque voluptates eveniet dolore, autem debitis velit in ducimus quasi alias dolorem. Magni facilis non?
+        </div>
+
+        <div class="large-6 columns">
+            <h4>New food update</h4> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, sequi natus. Earum consequuntur quam necessitatibus similique non maiores corporis quibusdam numquam ut deserunt facilis iure eum architecto error tempora, excepturi, obcaecati magni sequi delectus a quis, debitis commodi labore? Nemo ipsum, amet eius repudiandae repellat molestiae quod quidem, labore doloribus commodi dolorum esse soluta quisquam perferendis rem non qui laborum. Asperiores, natus iste ex delectus ipsum non corrupti doloribus nostrum fuga temporibus illum, quisquam atque!
+        </div>
+    </div>
     <!--END OF MAIN CONTENT-->
 
 
@@ -124,16 +135,87 @@
 
     <script>
     $(document).ready(function() {
-        $("#owl-demo").owlCarousel({
-            autoPlay: 5000,
-            stopOnHover: true,
-            navigation: true,
-            paginationSpeed: 2000,
-            goToFirstSpeed: 2000,
+
+        var time = 7; // time in seconds
+
+        var $progressBar,
+            $bar,
+            $elem,
+            isPause,
+            tick,
+            percentTime;
+
+        //Init the carousel
+        $("#owl-slider").owlCarousel({
+            slideSpeed: 500,
+            paginationSpeed: 500,
             singleItem: true,
-            autoHeight: true,
-            transitionStyle: "fade"
+            afterInit: progressBar,
+            afterMove: moved,
+            startDragging: pauseOnDragging
         });
+
+        //Init progressBar where elem is $("#owl-demo")
+        function progressBar(elem) {
+            $elem = elem;
+            //build progress bar elements
+            buildProgressBar();
+            //start counting
+            start();
+        }
+
+        //create div#progressBar and div#bar then prepend to $("#owl-demo")
+        function buildProgressBar() {
+            $progressBar = $("<div>", {
+                id: "progressBar"
+            });
+            $bar = $("<div>", {
+                id: "bar"
+            });
+            $progressBar.append($bar).prependTo($elem);
+        }
+
+        function start() {
+            //reset timer
+            percentTime = 0;
+            isPause = false;
+            //run interval every 0.01 second
+            tick = setInterval(interval, 30);
+        };
+
+        function interval() {
+            if (isPause === false) {
+                percentTime += 1 / time;
+                $bar.css({
+                    width: percentTime + "%"
+                });
+                //if percentTime is equal or greater than 100
+                if (percentTime >= 100) {
+                    //slide to next item 
+                    $elem.trigger('owl.next')
+                }
+            }
+        }
+
+        //pause while dragging 
+        function pauseOnDragging() {
+            isPause = true;
+        }
+
+        //moved callback
+        function moved() {
+            //clear interval
+            clearTimeout(tick);
+            //start again
+            start();
+        }
+
+        $elem.on('mouseover', function() {
+            isPause = true;
+        })
+        $elem.on('mouseout', function() {
+            isPause = false;
+        })
 
     });
     jQuery.noConflict();

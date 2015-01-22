@@ -1,24 +1,34 @@
 /*Layout:
 =================================*/
 
-#owl-demo .owl-item div{
-  padding:5px;
-  margin-top: 20px;
+#owl-slider{
+  margin-top: 3%;
 }
-#owl-demo .owl-item img{
+
+#owl-slider .item img{
   display: block;
   width: 100%;
   height: auto;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
+}
+
+#bar{
+  width: 0%;
+  max-width: 100%;
+  height: 4px;
+  background: #FFD500;
+}
+
+#progressBar{
+  width: 100%;
+  background: #EDEDED;
 }
 
 #main-content{
 	margin-top: 5%;
 }
-
+/*
 body{
+	
 	background: #E4E4E4 url('../img/cafe.jpg') no-repeat center;
 	background-size: cover;
 }
