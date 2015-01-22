@@ -1,12 +1,15 @@
 /*Layout:
 =================================*/
 
-.panel{
-	margin-top:80px;
+#owl-demo .owl-item div{
+  padding:5px;
+  margin-top: 80px;
 }
-
-#owl-demo .item img{
-    display: block;
-    width: 100%;
-    height: auto;
+#owl-demo .owl-item img{
+  display: block;
+  width: 100%;
+  height: auto;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
 }
