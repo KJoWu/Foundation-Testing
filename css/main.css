@@ -3,7 +3,7 @@
 
 #owl-demo .owl-item div{
   padding:5px;
-  margin-top: 80px;
+  margin-top: 20px;
 }
 #owl-demo .owl-item img{
   display: block;
@@ -15,5 +15,10 @@
 }
 
 #main-content{
-	margin-top: 4em;
+	margin-top: 5%;
+}
+
+body{
+	background: #E4E4E4 url('../img/cafe.jpg') no-repeat center;
+	background-size: cover;
 }

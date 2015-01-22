@@ -55,10 +55,9 @@
             </section>
         </nav>
     </div>
-
+    <!-- END OF TOP BAR MENU -->
 
     <!--ROLLING CONTENT-->
-
     <div id="owl-demo" class="row owl-carousel">
         <div class="item">
             <h1>Delicious Drinks</h1>
@@ -78,6 +77,7 @@
         <div class="item"><img src="assets/fullimage3.jpg" alt="Mirror Edge">
         </div>
     </div>
+    <!--END OF ROLLING CONTENT-->
 
 
     <!--MAIN CONTENT-->
@@ -90,31 +90,39 @@
             <h3>Main 1</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet.Consequuntur, saepe. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem iusto vero nisi quos, maxime harum necessitatibus eveniet in voluptatibus possimus. </p>
         </div>
-        
+
         <div class="large-4 columns">
             <h3>Main 1</h3>
             <p>Lorem ipsum Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus nam, eveniet. Molestias quo sapiente deleniti illum enim doloribus, explicabo ratione. dolor sit amet, consectetur adipisicijhkhkjhkjhkjhkjhkjhkjng elit. Consequuntur, saepe.</p>
         </div>
     </div>
+    <!--END OF MAIN CONTENT-->
 
 
     <!--MODAL FORM-->
-   <div id="myModal" class="reveal-modal" data-reveal>
-  <h2>Awesome. I have it.</h2>
-  <p class="lead">Your couch.  It is mine.</p>
-  <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
-  <a class="close-reveal-modal">&#215;</a>
-</div>
-
+    <div id="myModal" class="reveal-modal small" data-reveal>
+        <h4>Awesome. We will update you soon!</h4>
+        <a class="close-reveal-modal">&#215;</a>
+        <form>
+            <fieldset>
+                <input type="tel" placeholder="Mobile Phone">
+                <select>
+                    <option>iOS</option>
+                    <option>Android</option>
+                </select>
+                <button type="submit" class="small button">Text me!</button>
+            </fieldset>
+        </form>
+    </div>
     <!--END MODAL FORM-->
 
 
+    <!--SCRIPT-->
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/vendor/fastclick.js"></script>
+    <script src="js/foundation.min.js"></script>
 
-<script src="js/vendor/jquery.js"></script>
-<script src="js/vendor/fastclick.js"></script>
-<script src="js/foundation.min.js"></script>
-
-  <script>
+    <script>
     $(document).ready(function() {
         $("#owl-demo").owlCarousel({
             autoPlay: 5000,
@@ -130,9 +138,8 @@
     });
     jQuery.noConflict();
     jQuery(document).foundation();
-
-</script>
-
+    </script>
+    <!--END OF SCRIPT-->
 
 
 </body>
