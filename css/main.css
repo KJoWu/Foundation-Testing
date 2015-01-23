@@ -9,6 +9,7 @@
   display: block;
   width: 100%;
   height: auto;
+  border: groove 1em rgba(184, 102, 34, 0.9);
 }
 
 #bar{
@@ -25,6 +26,16 @@
 
 #main-content{
 	margin-top: 5%;
+}
+
+
+#footer {
+background: #333;
+padding: 1em;
+margin-top: 7%;
+color: #fff;
+text-align: center;
+font-size: 13px;
 }
 
 html { 
